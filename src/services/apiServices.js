@@ -1,12 +1,5 @@
-export const fetchAllRestaurants = async () => {
-  try {
-    fetch("http://localhost:8080/restaurants")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setPosts(data);
-      });
-  } catch (error) {
-    throw error;
-  }
+export const fetchData = async () => {
+  const res = await fetch("http://localhost:8080/api/restaurants");
+  const data = await res.json();
+  setRestaurantData(data);
 };
